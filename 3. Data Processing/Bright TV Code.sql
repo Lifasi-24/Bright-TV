@@ -37,3 +37,19 @@ SELECT COUNT(DISTINCT userid) AS subs,
     END AS gender_clean --my new gender column name 
 FROM user_profiles
 GROUP BY Gender;
+
+-------------------Race Checks -------------------------- 
+SELECT DISTINCT Race 
+FROM user_profiles; 
+
+SELECT COUNT(*) AS num_rows 
+FROM user_profiles 
+WHERE Race IS NULL; 
+ 
+SELECT DISTINCT 
+    CASE 
+        WHEN Race='other' THEN 'None' 
+        WHEN Race=' ' THEN 'None' 
+    ELSE Race 
+    END AS Race 
+FROM user_profiles; 
