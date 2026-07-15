@@ -1,24 +1,18 @@
 -- Databricks notebook source
---Telling databricks to use sql_fundamentals catalog and brighttv schema to shorten the table path
-USE sql_fundamentals.brighttv;
-
---Running full tables to see what I have
+--Running all to see what I have
 SELECT *
-FROM user_profiles;
-
-SELECT *
-FROM viewership;
+FROM sql_fundamentals.brighttv.user_profiles;
 
 -- checking for duplicates in my data 
 SELECT UserID,  
 COUNT(*) AS duplicate_count 
-FROM user_profiles 
+FROM sql_fundamentals.brighttv.user_profiles
 GROUP BY UserID 
 HAVING COUNT(*) > 1; 
 
 -- Are the any rows where userID is NULL  
 SELECT COUNT(*) AS cnt 
-FROM user_profiles 
+FROM sql_fundamentals.brighttv.user_profiles 
 WHERE UserID IS NULL; 
 
 SELECT DISTINCT UserID 
@@ -26,7 +20,7 @@ FROM user_profiles;
 
 ----Gender checks---
 SELECT DISTINCT Gender
-FROM user_profiles;
+FROM sql_fundamentals.brighttv.user_profiles;
 
 --cleaning up gender
 SELECT COUNT(DISTINCT userid) AS subs,  
@@ -35,7 +29,7 @@ SELECT COUNT(DISTINCT userid) AS subs,
         WHEN Gender = 'None' THEN 'unknown' --replaces none with unknown
     ELSE Gender --returns the gender as it is on the data
     END AS gender_clean --my new gender column name 
-FROM user_profiles
+FROM sql_fundamentals.brighttv.user_profiles
 GROUP BY Gender;
 
 -------------------Race Checks -------------------------- 
@@ -43,7 +37,7 @@ SELECT DISTINCT Race
 FROM user_profiles; 
 
 SELECT COUNT(*) AS num_rows 
-FROM user_profiles 
+FROM sql_fundamentals.brighttv.user_profiles 
 WHERE Race IS NULL; 
  
 SELECT DISTINCT 
@@ -52,11 +46,11 @@ SELECT DISTINCT
         WHEN Race=' ' THEN 'None' 
     ELSE Race 
     END AS Race 
-FROM user_profiles; 
+FROM sql_fundamentals.brighttv.user_profiles; 
 
 --------------Province Checks-------------------------- 
 SELECT DISTINCT Province 
-FROM user_profiles; 
+FROM sql_fundamentals.brighttv.user_profiles; 
 
 SELECT DISTINCT 
     CASE  
@@ -64,18 +58,18 @@ SELECT DISTINCT
         WHEN Province='None' THEN 'Uncategorized' 
     ELSE Province 
     END AS Location 
-FROM user_profiles; 
+FROM sql_fundamentals.brighttv.user_profiles; 
 
 ---------------------Age Checks------------------------- 
  SELECT MIN(Age) AS min_age,
         MAX(Age) AS max_age
- FROM user_profiles; 
+ FROM sql_fundamentals.brighttv.user_profiles; 
 
  SELECT COUNT(*) AS cnt 
- FROM user_profileS 
+ FROM sql_fundamentals.brighttv.user_profiles 
  WHERE age IS NULL; 
 
- WITH user_profiles AS (---user_profiles is a CTE
+WITH user_profiles AS (---user_profiles is a CTE
 SELECT UserID, 
  
     CASE  
@@ -116,5 +110,5 @@ SELECT UserID,
         ELSE gender 
     END AS Gender
 
-FROM user_profiles 
+FROM sql_fundamentals.brighttv.user_profiles 
 ), 
