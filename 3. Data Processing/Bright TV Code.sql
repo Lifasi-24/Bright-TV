@@ -65,3 +65,13 @@ SELECT DISTINCT
     ELSE Province 
     END AS Location 
 FROM user_profiles; 
+
+---------------------Age Checks------------------------- 
+ SELECT MIN(Age) AS min_age,
+        MAX(Age) AS max_age,
+        AVG(Age) AS avg_age
+ FROM user_profiles; 
+
+ SELECT COUNT(*) AS cnt 
+ FROM user_profileS 
+ WHERE age IS NULL; 
