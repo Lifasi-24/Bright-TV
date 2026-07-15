@@ -53,3 +53,15 @@ SELECT DISTINCT
     ELSE Race 
     END AS Race 
 FROM user_profiles; 
+
+--------------Province Checks-------------------------- 
+SELECT DISTINCT Province 
+FROM user_profiles; 
+
+SELECT DISTINCT 
+    CASE  
+        WHEN Province=' ' THEN 'Uncategorized' 
+        WHEN Province='None' THEN 'Uncategorized' 
+    ELSE Province 
+    END AS Location 
+FROM user_profiles; 
