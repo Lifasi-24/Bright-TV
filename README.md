@@ -30,8 +30,7 @@ Using customer profile and viewing session data, this project answers key busine
 
 
 <h2>🧰Tools & Technologies used</h2>
-<p>
-  
+  <p>
   * Miro – Project planning and process flowcharts
   * Canva – Project plan gantt chart
   * Databricks –data processing in SQL
@@ -39,6 +38,22 @@ Using customer profile and viewing session data, this project answers key busine
   * Power BI / Google Looker Studio / Databricks Dashboards – Data visualization
   * Microsoft Excel – Exploratory analysis, Pivot Tables and Charts</p>
 
+<h2>🚀Skills Demonstrated</h2>
+<p>    
+ <p>
+ 
+ * Data Cleaning
+ * SQL 
+ * Data Transformation
+ * Data Analytics
+ * Data Visualization
+ * Business Intelligence
+ * Dashboard Development
+ * Git & GitHub
+ * Databricks
+ * Excel Analytics
+ * Data Storytelling
+ * Project Planning</p>
    
 <h3>🧠What I learnt</h3>
 <p>This project enhanced my practical data analytics skills by taking me through the complete analytics process, from data cleaning  and SQL analysis in Databricks to creating dashboards and presenting business insights. It also improved my ability to interpret data, identify trends, and make data-driven recommendations while strengthening my experience with GitHub, Miro, and Canva for project planning, documentation and presentation.</p>
