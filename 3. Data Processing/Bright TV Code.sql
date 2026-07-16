@@ -156,3 +156,25 @@ SELECT
  
 FROM sql_fundamentals.brighttv.viewership 
 )
+SELECT Coalesce(A.userid,B.userid) AS sub_id, 
+       month_id, 
+       watch_date, 
+       day_of_week, 
+       day_name, 
+       day_classification, 
+       month_name, 
+       Tv_channel, 
+       time_of_day, 
+       hour_of_day, 
+       screen_time_bucket, 
+       --user_flag, 
+       duration, 
+       Location, 
+       age_groups, 
+       email_flag, 
+       sm_flag, 
+       Race, 
+       Gender 
+FROM viewership AS A 
+LEFT JOIN user_profiles AS B 
+ON A.userid=B.userid;
